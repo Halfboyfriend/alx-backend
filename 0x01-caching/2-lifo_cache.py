@@ -7,6 +7,7 @@ from base_caching import BaseCaching
 class LIFOCache(BaseCaching):
     def __init__(self):
         super().__init__()
+        self.queue = []
 
     def put(self, key, item):
         """
@@ -15,10 +16,18 @@ class LIFOCache(BaseCaching):
         :param item:
         :return:
         """
-        if key is None and item is None:
+        if key is None or item is None:
             return
+
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-            lastItem = self.cache_data.pop(-1)
+            lastItem = self.queue.pop()
             del self.cache_data[lastItem]
+            print(f'DISCARD: {lastItem}')
 
         self.cache_data[key] = item
+        self.queue.append(key)
+
+    def get(self, key):
+        if key is None:
+            return None
+        return self.cache_data[key, None]
