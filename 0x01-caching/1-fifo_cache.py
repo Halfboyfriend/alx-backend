@@ -4,7 +4,7 @@
 from base_caching import BaseCaching
 
 
-class FIFOCache (BaseCaching):
+class FIFOCache(BaseCaching):
     """
     FifoCache
     """
@@ -25,7 +25,6 @@ class FIFOCache (BaseCaching):
         if key is None or item is None:
             return
 
-            # If the cache is full, remove the oldest item (FIFO)
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             oldest_key = self.queue.pop(0)
             del self.cache_data[oldest_key]
@@ -37,5 +36,4 @@ class FIFOCache (BaseCaching):
     def get(self, key):
         if key is None:
             return None
-
         return self.cache_data.get(key, None)
