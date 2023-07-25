@@ -12,7 +12,7 @@ class LIFOCache(BaseCaching):
     def put(self, key, item):
         """
 
-        :param key:
+        :param key: Key
         :param item:
         :return:
         """
