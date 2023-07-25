@@ -23,7 +23,7 @@ class FIFOCache(BaseCaching):
         :return:
         """
         if key is None or item is None:
-            return
+            return None
 
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             oldest_key = self.queue.pop(0)
