@@ -5,6 +5,10 @@ from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
+    """
+    FIFOCACHE
+    """
+
     def __init__(self):
         super().__init__()
         self.queue = []
