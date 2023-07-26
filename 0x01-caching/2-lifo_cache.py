@@ -6,6 +6,8 @@ from base_caching import BaseCaching
 
 class LIFOCache(BaseCaching):
     def __init__(self):
+        """
+        Initializing"""
         super().__init__()
         self.queue = []
 
