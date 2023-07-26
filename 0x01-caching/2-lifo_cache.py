@@ -21,15 +21,18 @@ class LIFOCache(BaseCaching):
         if key is None or item is None:
             pass
 
-        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-            last = self.queue.pop()
-            del self.cache_data[last]
-            print(f'\nDISCARD: {last}')
+        else:
+            if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+                last = self.queue.pop()
+                del self.cache_data[last]
+                print(f'\nDISCARD: {last}')
 
-        self.cache_data[key] = item
-        self.queue.append(key)
+            self.cache_data[key] = item
+            self.queue.append(key)
 
     def get(self, key):
+        """
+        Return None"""
         if key is None:
             return None
         return self.cache_data[key, None]
