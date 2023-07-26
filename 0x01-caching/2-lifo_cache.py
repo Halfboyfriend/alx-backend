@@ -17,7 +17,7 @@ class LIFOCache(BaseCaching):
         :return:
         """
         if key is None or item is None:
-            return
+            pass
 
         if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             last = self.queue.pop()
