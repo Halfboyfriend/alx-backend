@@ -22,7 +22,8 @@ class LRUCache(BaseCaching):
         if key is None or item is None:
             pass
         else:
-            if len(self.cache_data) >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
+            if len(self.cache_data) >= BaseCaching.MAX_ITEMS \
+                    and key not in self.cache_data:
                 print("DISCARD: {}".format(self.stack[0]))
                 del self.cache_data[self.stack[0]]
                 del self.stack[0]
