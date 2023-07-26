@@ -6,7 +6,7 @@ from base_caching import BaseCaching
 
 class LRUCache(BaseCaching):
     """
-    FIFOCache defines a FIFO caching system
+    LRUcache defines a LRU caching system
     """
     def __init__(self):
         """
