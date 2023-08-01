@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from flask_babel import Babel
+from flask_babel import Babel, _
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
@@ -20,9 +20,10 @@ def get_locale ():
 
 
 @app.route('/')
-def home():
-    locale = get_locale()
-    return render_template('2-index.html', loc=locale)
+def index():
+    home_title = _("Welcome to Holberton")
+    home_header = _("Hello world!")
+    return render_template('3-index.html', home_title=home_title, home_header=home_header)
 
 
 if __name__ == '__main__':
