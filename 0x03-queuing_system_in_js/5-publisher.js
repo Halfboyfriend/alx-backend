@@ -11,7 +11,7 @@ publisher.on('error', function(error) {
     console.log(`Redis client not connected to the server: ${error.message}`);
 });
 
-//function to publish message to holberton school channel
+
 function publishMessage(message, time) {
   //message (str): message to be published, time (int): time in milliseconds to wait before sending message
   setTimeout(function () {
